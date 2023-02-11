@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+class Animal {
+	constructor() {
+		this.age = 0;
+	}
+
+	getOlder() {
+	    this.age++;
+	}
+}
+class Human extends Animal {
+	constructor() {
+		super();
+		this.skill_lang = 1;
+	}
+
+	momstouch(stroke) {
+		this.skill_lang += stroke;
+	}
+}
+
+function myinit(){
+	var a = new Animal();
+	console.log(a.age);
+	a.getOlder();	
+	console.log(a.age);
+	
+	var hum = new Human();
+	console.log(hum.age);
+	console.log(hum.skill_lang);
+	
+	hum.getOlder();
+	hum.momstouch(5);
+	console.log(hum.age);
+	console.log(hum.skill_lang);
+
+}
+
+</script>
+</head>
+<body onload="myinit()">
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

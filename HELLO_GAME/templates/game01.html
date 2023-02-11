@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{
+	background-color: #777777;
+}
+.invader {
+	position : absolute;
+}
+#myimg {
+	position : absolute;
+}
+#mybull {
+	position : absolute;
+}
+</style>
+
+<script type="text/javascript">
+
+
+/* window.addEventListener("keydown", (event) => {
+// 	console.log(event.key);
+	var myimg = document.querySelector('#myimg');
+	var left = document.defaultView.getComputedStyle(myimg).getPropertyValue("left");
+	if (event.key === "ArrowLeft") {
+// 		console.log("왼쪽");
+// 		console.log("left : ", left, parseInt(left))
+		myimg.style.left = parseInt(left) - 10 + "px";
+		
+	}
+	
+	if(event.key === "ArrowRight"){
+		myimg.style.left = parseInt(left) + 10 + "px";
+		
+	}
+
+	
+}); */
+
+
+window.onkeydown = (e) => {
+	console.log("keydown");
+	console.log(e.key); 
+	
+// 	console.log(obj_ship.style.left); // 50px 출력
+	var obj_ship = document.querySelector("#myimg");
+	var int_left = parseInt(obj_ship.style.left.replace("px",""));
+	
+	if (e.key === "ArrowRight") {
+		int_left += 1;
+	}
+	if (e.key === "ArrowLeft") {
+		int_left -= 1;
+	}
+
+	obj_ship.style.left = int_left  + "px";
+	
+	
+}
+
+function myrender(){
+	var obj_bull = document.querySelector("#mybull");
+	var int_top = parseInt(obj_bull.style.top.replace("px",""));
+	
+	int_top -= 10;
+	  
+	obj_bull.style.top = int_top  + "px";
+	  
+	
+	setTimeout(myrender, 30);
+		
+}
+
+function myinit(){
+	 myrender()
+	
+}
+
+</script>
+</head>
+<body onload="myinit()">
+
+<img class="invader" src="static/invader2.png" width="50px" style="top:500px; left:200px;"/>
+<img id="myimg" src="static/ship.png" width="50px" style="top:500px; left:50px;"/>
+<img id="mybull" src="static/shadow.png" width="50px" style="top:500px; left:50px;"/>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
